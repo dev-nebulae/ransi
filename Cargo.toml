@@ -8,6 +8,6 @@ license = "GPL-3.0-or-later"
 readme = "README.md"
 homepage = "https://github.com/dev-nebulae/ransi"
 repository = "https://github.com/dev-nebulae/ransi"
-keywords = ["ansi", "escape codes", "terminal", "color"]
+keywords = ["ansi", "escape-codes", "terminal", "color", "tui"]
 
 [dependencies]
