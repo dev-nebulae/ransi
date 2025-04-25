@@ -24,7 +24,7 @@
 /// }
 /// ```
 pub fn bell(text: &str) -> String{
-    format!("\007{}", text)
+    format!("\x07{}", text)
 }
 
 /// set_title() -> String - Changes the terminal title

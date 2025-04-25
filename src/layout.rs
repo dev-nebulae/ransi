@@ -1,3 +1,5 @@
+use std::io::{self, Write};
+
 /// bold(text: &str) -> String - Bold an string
 ///
 /// This function takes a string slice as an input and returns a new string that,
@@ -12,7 +14,7 @@
 /// println!("{}", bold(important_text));
 /// ```
 pub fn bold(text: &str) -> String {
-    format!("\033[1m{}\033[22m", text)
+    format!("\x1b[1m{}\x1b[22m", text)
 }
 
 /// blink(text: &str) -> String - Makes text blink
@@ -33,7 +35,9 @@ pub fn bold(text: &str) -> String {
 /// println!("This text is not blinking.");
 /// ```
 pub fn blink(text: &str) -> String {
-    format!("\033[5m{}\033[25m", text) // NOTE: use 25m to reset the blink
+    let blink = format!("\x1B[5m{}\x1B[25m", text); // NOTE: use 25m to reset the blink
+	io::stdout().flush().unwrap();
+	blink
 }
 
 /// italic(text: &str) -> String - Makes the text italic
@@ -55,6 +59,6 @@ pub fn blink(text: &str) -> String {
 /// println!("{}", text2);
 /// ```
 pub fn italic(text: &str) -> String {
-    format!("\033[3m{}\033[23m", text)
+    format!("\x1B[3m{}\x1B[23m", text)
 }
 
