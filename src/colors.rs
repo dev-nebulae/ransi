@@ -50,7 +50,7 @@ impl ColorIn for (u8, u8, u8) {
 /// reset();
 /// println!("This text is red");
 /// ```
-fn set_color<C: ColorIn>(color: C) -> Option<String> {
+pub fn set_color<C: ColorIn>(color: C) -> Option<String> {
 
     let ret = color.to_ansi();
     

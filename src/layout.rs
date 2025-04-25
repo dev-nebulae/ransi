@@ -2,7 +2,7 @@
 ///
 /// This function takes a string slice as an input and returns a new string that,
 /// when printed, will appear in bold.
-fn bold(text: &str) -> String {
+pub fn bold(text: &str) -> String {
     format!("\033[22m")
 }
 
@@ -23,6 +23,6 @@ fn bold(text: &str) -> String {
 /// println!("{}", blink_text);
 /// println!("This text is not blinking.");
 /// ```
-fn blink(text: &str) -> String {
+pub fn blink(text: &str) -> String {
     format!("\033[5m{}\033[25m", text) // NOTE: use 25m to reset the blink
 }
