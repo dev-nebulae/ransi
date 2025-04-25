@@ -1,5 +1,5 @@
 /// Function that returns an ANSI escape code for a given color name
-fn get_ansi_from_name(short_name: &str) -> Option<String> {
+pub fn get_ansi_from_name(short_name: &str) -> Option<String> {
     match short_name {
         "red" => Some("\x1B[31m".to_string()),
         "green" => Some("\x1B[32m".to_string()),
@@ -12,7 +12,7 @@ fn get_ansi_from_name(short_name: &str) -> Option<String> {
     }
 }
 
-fn get_ansi_bg_from_name(short_name: &str) -> Option<String> {
+pub fn get_ansi_bg_from_name(short_name: &str) -> Option<String> {
     match short_name {
         "red" => Some("\x1B[41m".to_string()),
         "green" => Some("\x1B[42m".to_string()),
