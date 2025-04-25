@@ -38,6 +38,13 @@ impl ColorIn for (u8, u8, u8) {
     }
 }
 
+/// Implement the ColorIn trait for when a single u8 is passed (256 colors)
+impl ColorIn for u8 {
+	fn to_ansi(&self) -> Option<String> {
+		Some(format!("\x1B[38;5;{}m", self))
+	}
+}
+
 /// reset() - Manually reset the color
 ///
 /// Reset manually clears all atributes
@@ -45,7 +52,7 @@ pub fn reset() {
     println!("\033[0m");
 }
 
-/// set_color(&str color OR (u8, u8, u8) color) - Prints and returns the ANSI 
+/// set_fg(&str color OR (u8, u8, u8) color) - Prints and returns the ANSI 
 /// escape code for the color
 /// given on color.
 ///
@@ -53,11 +60,11 @@ pub fn reset() {
 /// ```
 /// use ransi::colors::{set_color, reset};
 ///
-/// set_color("red");
+/// set_fg("red");
 /// reset();
 /// println!("This text is red");
 /// ```
-pub fn set_color<C: ColorIn>(color: C) -> Option<String> {
+pub fn set_fg<C: ColorIn>(color: C) -> Option<String> {
 
     let ret = color.to_ansi();
     
@@ -68,4 +75,27 @@ pub fn set_color<C: ColorIn>(color: C) -> Option<String> {
 
     None
     
+}
+
+/// set_fg(&str color OR (u8, u8, u8) color) - Prints and returns the ANSI 
+/// escape code for the color
+/// given on color.
+///
+/// # Examples
+/// ```
+/// use ransi::colors::{set_color, reset};
+///
+/// set_fg("red");
+/// reset();
+/// println!("This text is red");
+/// ```
+pub fn set_bg<C: ColorIn>(color: C) -> Option<String> {
+	let ret = color.to_ansi();
+
+	if None != ret {
+		println!("{}", ret.clone().unwrap());
+		return ret;
+	}
+
+	None
 }

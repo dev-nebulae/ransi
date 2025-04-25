@@ -18,7 +18,6 @@
 
 pub mod colors;
 pub mod layout;
-//mod cursor;
-//mod screen;
-//mod bell;
-//mod ucode;
+pub mod screen;
+pub mod term;
+pub mod cursor;

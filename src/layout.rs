@@ -57,3 +57,4 @@ pub fn blink(text: &str) -> String {
 pub fn italic(text: &str) -> String {
     format!("\033[3m{}\033[23m", text)
 }
+
