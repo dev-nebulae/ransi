@@ -50,7 +50,7 @@ pub fn blink(text: &str) -> String {
 /// let text2 = "Violets are blue, Roses are red, This is italic text";
 /// let italic_text = italic(text1);
 ///
-/// println!("{}", text);
+/// println!("{}", text1);
 /// println!("And now italic...");
 /// println!("{}", text2);
 /// ```
