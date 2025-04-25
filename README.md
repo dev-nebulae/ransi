@@ -76,7 +76,7 @@ This isn't *completely true*, as it misses the 21m escape code,
 which almost always leads to undefined behavior in different terminals.
 
 Originally, 21m was used to dim text, but no terminal supports it,
-and the ones that do, and sometimes they double-underline the text
-and make it bright.
+and the ones that do, double-underline the text
+and make it bright. Others keep the default behavour
 
 It is pretty confusing, so we don't support it.
