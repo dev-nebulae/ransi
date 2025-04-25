@@ -12,7 +12,7 @@
 /// println!("{}", bold(important_text));
 /// ```
 pub fn bold(text: &str) -> String {
-    format!("\033[22m")
+    format!("\033[1m{}\033[22m", text)
 }
 
 /// blink(text: &str) -> String - Makes text blink

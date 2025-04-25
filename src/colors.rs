@@ -58,7 +58,7 @@ pub fn reset() {
 ///
 /// # Examples
 /// ```
-/// use ransi::colors::{set_color, reset};
+/// use ransi::colors::{set_fg, reset};
 ///
 /// set_fg("red");
 /// reset();
@@ -77,17 +77,17 @@ pub fn set_fg<C: ColorIn>(color: C) -> Option<String> {
     
 }
 
-/// set_fg(&str color OR (u8, u8, u8) color) - Prints and returns the ANSI 
+/// set_bg(&str color OR (u8, u8, u8) color) - Prints and returns the ANSI 
 /// escape code for the color
 /// given on color.
 ///
 /// # Examples
 /// ```
-/// use ransi::colors::{set_color, reset};
+/// use ransi::colors::{set_bg, reset};
 ///
-/// set_fg("red");
+/// set_bg("red");
 /// reset();
-/// println!("This text is red");
+/// println!("This text is on red");
 /// ```
 pub fn set_bg<C: ColorIn>(color: C) -> Option<String> {
 	let ret = color.to_ansi();
