@@ -6,6 +6,8 @@
 /// # Examples
 ///
 /// ```
+/// use ransi::layout::bold;
+///
 /// let important_text: &str = "This is really important!";
 /// println!("{}", bold(important_text));
 /// ```
@@ -22,6 +24,7 @@ pub fn bold(text: &str) -> String {
 ///
 /// ```
 /// use ransi::layout::blink;
+///
 /// let text = "This text will blink";
 ///
 /// let blink_text = blink(text);
@@ -51,6 +54,6 @@ pub fn blink(text: &str) -> String {
 /// println!("And now italic...");
 /// println!("{}", text2);
 /// ```
-fn italic(text: &str) -> String {
+pub fn italic(text: &str) -> String {
     format!("\033[3m{}\033[23m", text)
 }
