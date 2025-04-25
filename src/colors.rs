@@ -38,13 +38,20 @@ impl ColorIn for (u8, u8, u8) {
     }
 }
 
+/// reset() - Manually reset the color
+///
+/// Reset manually clears all atributes
+pub fn reset() {
+    println!("\033[0m");
+}
+
 /// set_color(&str color OR (u8, u8, u8) color) - Prints and returns the ANSI 
 /// escape code for the color
 /// given on color.
 ///
 /// # Examples
 /// ```
-/// use ransi::colors::{set_color};
+/// use ransi::colors::{set_color, reset};
 ///
 /// set_color("red");
 /// reset();
