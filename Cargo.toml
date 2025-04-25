@@ -1,0 +1,13 @@
+[package]
+name = "ransi"
+version = "0.1.0"
+edition = "2024"
+authors = ["Mario Rosell"]
+description = "ransi - Utility for ANSI escape codes"
+license = "GPL-3.0-or-later"
+readme = "README.md"
+homepage = "https://github.com/dev-nebulae/ransi"
+repository = "https://github.com/dev-nebulae/ransi"
+keywords = ["ansi", "escape codes", "terminal", "color"]
+
+[dependencies]
