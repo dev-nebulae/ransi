@@ -51,11 +51,11 @@ impl ColorIn for &str {
 impl ColorIn for (u8, u8, u8) {
     fn to_ansi(&self) -> Option<String> {
         let (r, g, b) = *self;
-        Some(format!("\x1B[38;2;{};{};{}m", r, g, b).into())
+        Some(format!("\x1B[38;2;{};{};{}m", r, g, b))
     }
 	fn to_ansi_bg(&self) -> Option<String> {
 		let (r, g, b) = *self;
-		Some(format!("\x1B[48;2;{};{};{}", r, g, b).into())
+		Some(format!("\x1B[48;2;{};{};{}", r, g, b))
 	}
 }
 

@@ -20,7 +20,7 @@
 /// println!("{}", clear());
 /// ```
 pub fn clear() -> String {
-    format!("\x1B[2J\x1B[H")
+    "\x1B[2J\x1B[H".to_string()
 }
 
 /// clear_from_cursor() - Clear screen from cursor to end
@@ -35,7 +35,7 @@ pub fn clear() -> String {
 /// println!("{}", clear_from_cursor());
 /// ```
 pub fn clear_from_cursor() -> String {
-    format!("\x1B[0J")
+    "\x1B[0J".to_string()
 }
 
 /// clear_to_cursor() - Clear screen from start to cursor
@@ -50,7 +50,7 @@ pub fn clear_from_cursor() -> String {
 /// println!("{}", clear_to_cursor());
 /// ```
 pub fn clear_to_cursor() -> String {
-    format!("\x1B[1J")
+    "\x1B[1J".to_string()
 }
 
 /// clear_all() - Clear entire screen and scrollback buffer
@@ -65,7 +65,7 @@ pub fn clear_to_cursor() -> String {
 /// println!("{}", clear_all());
 /// ```
 pub fn clear_all() -> String {
-    format!("\x1B[3J")
+    "\x1B[3J".to_string()
 }
 
 /// clear_line() - Clear the entire current line
@@ -80,7 +80,7 @@ pub fn clear_all() -> String {
 /// println!("{}", clear_line());
 /// ```
 pub fn clear_line() -> String {
-    format!("\x1B[2K")
+    "\x1B[2K".to_string()
 }
 
 /// clear_line_from_cursor() - Clear from cursor to end of line
@@ -95,7 +95,7 @@ pub fn clear_line() -> String {
 /// println!("{}", clear_line_from_cursor());
 /// ```
 pub fn clear_line_from_cursor() -> String {
-    format!("\x1B[0K")
+    "\x1B[0K".to_string()
 }
 
 /// clear_line_to_cursor() - Clear from beginning of line to cursor
@@ -110,6 +110,6 @@ pub fn clear_line_from_cursor() -> String {
 /// println!("{}", clear_line_to_cursor());
 /// ```
 pub fn clear_line_to_cursor() -> String {
-    format!("\x1B[1K")
+    "\x1B[1K".to_string()
 }
 

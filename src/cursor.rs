@@ -96,7 +96,7 @@ pub fn move_left(n: u16) -> String {
 /// println!("Screen starts fresh here.");
 /// ```
 pub fn home() -> String {
-    format!("\x1B[H")
+    "\x1B[H".to_string()
 }
 
 /// save_position() - Save the current cursor position
@@ -113,7 +113,7 @@ pub fn home() -> String {
 /// print!("{}", restore_position());
 /// ```
 pub fn save_position() -> String {
-    format!("\x1B[s")
+    "\x1B[s".to_string()
 }
 
 /// restore_position() - Restore the previously saved cursor position
@@ -131,6 +131,6 @@ pub fn save_position() -> String {
 /// println!("Back to saved spot!");
 /// ```
 pub fn restore_position() -> String {
-    format!("\x1B[u")
+    "\x1B[u".to_string()
 }
 
