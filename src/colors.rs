@@ -88,16 +88,13 @@ pub fn reset() {
 /// reset();
 /// println!("This text is red");
 /// ```
-pub fn set_fg<C: ColorIn>(color: C) -> Option<String> {
-    let ret = color.to_ansi();
-    
-    if let Some(ansi_code) = ret {
-        println!("{}", ansi_code); // Change the color
-        return Some(ansi_code);
-    }
-
-    None
+pub fn set_fg<C: ColorIn>(color: C, text: &str) -> String {
+    color
+        .to_ansi()
+        .map(|ansi_code| format!("{}{}\x1B[0m", ansi_code, text))
+        .unwrap_or_else(|| text.to_string())
 }
+
 
 /// set_bg(&str color OR (u8, u8, u8) color) - Prints and returns the ANSI 
 /// escape code for the color
@@ -111,14 +108,9 @@ pub fn set_fg<C: ColorIn>(color: C) -> Option<String> {
 /// reset();
 /// println!("This text is on red");
 /// ```
-pub fn set_bg<C: ColorIn>(color: C) -> Option<String> {
-    let ret = color.to_ansi_bg();
-
-    if let Some(ansi_code) = ret {
-        println!("{}", ansi_code);
-        return Some(ansi_code);
-    }
-
-    None
+pub fn set_bg<C: ColorIn>(color: C, text: &str) -> String {
+	color
+		.to_ansi_bg()
+		.map(|ansi_code| format!("{}{}\x1B[0m", ansi_code, text))
+		.unwrap_or_else(|| text.to_string())
 }
-
