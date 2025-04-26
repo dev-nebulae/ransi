@@ -59,9 +59,23 @@ ransi = "0.1"
 | `italic(string: &str)`                            | Make the string be italic if printed |
 | `blink(string: &str)`                             | Make the string blink if printed     |
 | `mov_cur(x: u16, y: u16)`                         | Move the cursor to a position        |
-| `
+| `clear_screen()`                                  | Clear the screen                     |
+| `bell()`                                          | Play a bell                          |
+| `set_title(title: &str)`                          | Set the title of the terminal        |
+| `clear_from_cursor()`                             | Clear the screen from the cursor     |
+| `clear_before_cursor()`                           | Clear the screen before the cursor   |
+| `clear_after_cursor()`                            | Clear the screen after the cursor    |
+| `clear_line()`                                    | Clear the current line               |
+| `clear_line_from_cursor()`                        | Clear the current line from the cursor|
+| `clear_line_before_cursor()`                      | Clear the current line before the cursor|
+| `clear_line_after_cursor()`                       | Clear the current line after the cursor|
+| `save_cursor()`                                   | Save the cursor position             |
+| `restore_cursor()`                                | Restore the cursor position          |
 
 ---
+
+> [!IMPORTANT]
+> To chain functions together, you will need to **borrow** the second function.
 
 ### Traits
 

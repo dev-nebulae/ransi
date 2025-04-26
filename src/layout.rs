@@ -1,5 +1,4 @@
 use std::io::{self, Write};
-
 /// bold(text: &str) -> String - Bold an string
 ///
 /// This function takes a string slice as an input and returns a new string that,
@@ -34,6 +33,8 @@ pub fn bold(text: &str) -> String {
 /// println!("{}", blink_text);
 /// println!("This text is not blinking.");
 /// ```
+/// Note that few terminals support it (xterm, urxvt and the classics), as
+/// they are annoying.
 pub fn blink(text: &str) -> String {
     let blink = format!("\x1B[5m{}\x1B[25m", text); // NOTE: use 25m to reset the blink
 	io::stdout().flush().unwrap();

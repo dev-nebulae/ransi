@@ -1,6 +1,7 @@
 use ransi::colors::*;
+use ransi::layout::*;
 
 fn main() {
-	println!("{}", set_bg("red", "Hello, World!"));
+	println!("{}", set_fg("red", &blink("This text blinks")));
 }
 
